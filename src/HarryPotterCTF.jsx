@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Lock, Unlock, Star, Zap, Code, Clock, Trophy, Sparkles } from 'lucide-react';
-
+import hogwartsBackground from './assets/hogwarts_background.jpg';
 const HarryPotterCTF = () => {
   const [currentLevel, setCurrentLevel] = useState(0);
   const [unlockedLevels, setUnlockedLevels] = useState([0]);
@@ -139,7 +139,15 @@ const HarryPotterCTF = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-slate-900 to-black text-amber-50 relative overflow-hidden">
+    <div 
+  className="min-h-screen text-amber-50 relative overflow-hidden" 
+  style={{
+    backgroundImage: `url(${hogwartsBackground})`,
+    backgroundSize: 'cover',         // Ensures the image covers the entire container
+    backgroundPosition: 'center',    // Centers the image
+    backgroundAttachment: 'scroll'    // Makes the background fixed while scrolling
+  }}
+>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {floatingSpells.map(spell => (
           <div
